@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/adwa.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>HOME</title>
+</head>
+<body>
+    <style>
+    body,h1 {font-family: "Raleway", Arial, sans-serif}
+    h1 {letter-spacing: 6px}
+    .adwa-row-padding img {margin-bottom: 12px}
+    </style>
+    </head>
+    <body>
+    
+    <!-- !PAGE CONTENT! -->
+    <div class="adwa-content" style="max-width:1500px">
+    
+    <!-- Header -->
+    <header class="adwa-panel adwa-pale-green adwa-center adwa-opacity adwa-bottombar adwa-border-teal" style="padding:90px 16px">
+      <h1 class="adwa-xlarge">FINANCIAL ADVISOR</h1>
+      <h1 class="adwa-tag adwa-lime adwa-leftbar adwa-topbar adwa-border-teal">WEDAJ</h1>
+      <br><br>
+      <div class="adwa-padding-left adwa-padding-right">
+        <div class="adwa-bar adwa-responsive">
+          <a href="/" class="adwa-hover-green adwa-bar-item adwa-button adwa-light-green">Home</a>
+          <a href="about" class="adwa-bar-item adwa-button adwa-hover-green">About</a>
+          <a href="contact" class="adwa-hover-green adwa-bar-item adwa-button adwa-padding-right adwa-rightbar adwa-border-teal">Contact</a>
+          {% if not user.is_authenticated %}
+          <a href="accounts/login" class="adwa-bar-item adwa-button adwa-hover-green">Login</a>
+          <a href="accounts/register" class="adwa-bar-item adwa-button adwa-hover-green">Register</a>
+          {% else %}
+          <a href="accounts/logout" class="adwa-bar-item adwa-button">Logout</a> 
+          <span class="adwa-bar-item adwa-lime">Welcome {{user.username}} <i class="fa fa-user"></i></span>
+          {% endif %}
+        </div>
+      </div>
+    </header>
+<br><br>
+    {% if user.is_authenticated %}
+    <div class="adwa-container adwa-green">
+        <h2 class="adwa-center">Get An Advice</h2>
+      </div>
+      
+      <form action="advice" class="adwa-border adwa-border-teal adwa-container adwa-center" method="post">
+        {% csrf_token %}
+        <br>
+        <label class="adwa-text-teal"><b>Total Income</b></label>
+        <input class="adwa-input adwa-border adwa-pale-green adwa-animate-opacity" type="number" name="total_income" placeholder="Enter your total income..." min="0"  required>
+      <br>
+        <label class="adwa-text-teal"><b>Total Expenditures</b></label>
+        <input class="adwa-input adwa-border adwa-pale-green adwa-animate-opacity" type="number" name="total_expenditures" placeholder="Enter your total expenditures..." min="0" required>
+      <br>
+        <label class="adwa-text-teal"><b>Simple Interest Earned</b></label>
+        <input class="adwa-input adwa-border adwa-pale-green adwa-animate-opacity" type="number" name="simple_interest_earned" placeholder="Simple interest by percent..." min="0" max="100" required>
+        <br>
+      <button class="adwa-button adwa-border adwa-border-teal adwa-hover-green">Give Me Advice</button>
+<br>
+<br>
+      </form>
+      <br><br>
+{% if searched %}
+<div class="adwa-responsive">
+<table class="adwa-table adwa-striped adwa-table-bordered">
+    <thead>
+        <tr>
+            <th class="adwa-center adwa-green" colspan="3"><h3>Results</h3></th>
+          </tr>
+      <tr class="adwa-pale-green">
+        <th class="adwa-border-right adwa-center">Metric</th>
+        <th class="adwa-border-right adwa-center">Value</th>
+        <th class="adwa-center">Advice</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="adwa-border-right">Positive Cash Flow</td>
+        <td class="adwa-border-right"><i class="fa fa-dollar"></i> {{postive_cash_flow}}</td>
+      </tr>
+      <tr>
+        <td class="adwa-border-right">Total Savings</td>
+        <td class="adwa-border-right"><i class="fa fa-dollar"></i> {{total_savings}}</td>
+        <td class="adwa-center adwa-white"> {{main_advice}}</td>
+      </tr>
+      <tr class="adwa-bottombar adwa-border-green">
+        <td class="adwa-border-right">Total Return</td>
+        <td class="adwa-border-right"><i class="fa fa-dollar"></i> {{total_return}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <br><br>
+    {% else %}
+    {% endif %}
+        {% else %}
+        <h3 class="adwa-code adwa-border-teal adwa-teal adwa-center"><a class="adwa-text-lime" href="accounts/register"> Register</a> Or <a class="adwa-text-lime" href="accounts/login"> Login</a> And Take An Advice</h3>
+        {% endif %}
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/adwa.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>ABOUT</title>
+</head>
+<body>
+    <style>
+    body,h1 {font-family: "Raleway", Arial, sans-serif}
+    h1 {letter-spacing: 6px}
+    .adwa-row-padding img {margin-bottom: 12px}
+    </style>
+    </head>
+    <body>
+    
+    <!-- !PAGE CONTENT! -->
+    <div class="adwa-content" style="max-width:1500px">
+    
+    <!-- Header -->
+    <header class="adwa-panel adwa-pale-green adwa-center adwa-opacity adwa-bottombar adwa-border-teal" style="padding:90px 16px">
+      <h1 class="adwa-xlarge">FINANCIAL ADVISOR</h1>
+      <h1 class="adwa-tag adwa-lime adwa-leftbar adwa-topbar adwa-border-teal">WEDAJ</h1>
+      <br><br>
+      <div class="adwa-padding-left adwa-padding-right">
+        <div class="adwa-bar adwa-responsive">
+          <a href="/" class="adwa-hover-green adwa-bar-item adwa-button">Home</a>
+          <a href="about" class="adwa-light-green adwa-bar-item adwa-button adwa-hover-green">About</a>
+          <a href="contact" class="adwa-hover-green adwa-bar-item adwa-button adwa-padding-right adwa-rightbar adwa-border-teal">Contact</a>
+          {% if not user.is_authenticated %}
+          <a href="accounts/login" class="adwa-bar-item adwa-button adwa-hover-green">Login</a>
+          <a href="accounts/register" class="adwa-bar-item adwa-button adwa-hover-green">Register</a>
+          {% else %}
+          <a href="accounts/logout" class="adwa-bar-item adwa-button">Logout</a> 
+          <span class="adwa-bar-item adwa-lime">Welcome {{user.username}} <i class="fa fa-user"></i></span>
+          {% endif %}
+        </div>
+      </div>
+    </header>
+
+
+</div>
+
+<!-- Container (About Section) -->
+<div class="adwa-content adwa-container adwa-padding-64" id="about">
+  <h3 class="adwa-center adwa-text-light-green">ABOUT</h3>
+  <p class="adwa-center adwa-codespan adwa-text-teal"><em>Your Bussiness wedaj</em></p>
+  <p class="adwa-round-large adwa-panel adwa-leftbar adwa-border-teal adwa-pale-green adwa-monospace">
+    <br>
+    <i class="fa fa-quote-left adwa-text-light-green adwa-xxlarge"></i>
+    <br><br>
+    <b class="adwa-tag adwa-green">WEDAJ</b> is a website that provides financial advice and guidance.
+     The name "wedaj" means "friend" or "helper" in Amharic, and that is exactly what we aim to be for you.
+     We want to be your friend and helper in your journey to financial well-being.
+     <br>
+     Wedaj is your one-stop shop for everything you need to improve your finances.
+      Whether you are a beginner or a seasoned pro, we have something to help you.
+      Visit our website today and start your journey to financial well-being!
+      <br>
+     <i class="fa fa-quote-right adwa-right adwa-text-light-green adwa-xxlarge"></i>
+    </p>
+    </body>
+</html>

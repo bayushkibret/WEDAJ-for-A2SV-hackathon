@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/adwa.css' %}">
+    <title>REGISTER</title>
+</head>
+<body class="adwa-cursive">
+    <div class="adwa-center"><br>
+        <h2 class="adwa-center adwa-cursive">REGISTER</h2>
+        <img src="{% static 'img/avatar3.png' %}" alt="Avatar" style="width:30%" class="adwa-circle adwa-margin-top adwa-center">
+      </div>
+      <div class="adwa-panel adwa-bar adwa-leftbar adwa-pale-red adwa-margin adwa-border-red adwa-text-red">
+        {% for message in messages%}
+        <h3 class="adwa-center">{{message}}</h3>
+        {% endfor %}
+    </div>
+      <form method="post" class="adwa-container" action="register">
+        {% csrf_token %}
+        <div class="adwa-section">
+          <label><b>First Name</b></label>
+          <input class="adwa-pale-green adwa-input adwa-border adwa-margin-bottom" type="text" placeholder="First Name..." name="first_name" required>
+          <label class="adwa-text-teal"><b>Last Name</b></label>
+          <input class="adwa-pale-green adwa-input adwa-border" type="text" placeholder="Last Name..." name="last-name" required>
+          <label class="adwa-text-teal"><b>User Name</b></label>
+          <input class="adwa-pale-green adwa-input adwa-border adwa-margin-bottom" type="text" placeholder="User Name..." name="username" required>
+          <label class="adwa-text-teal"><b>Email</b></label>
+          <input class="adwa-pale-green adwa-input adwa-border adwa-margin-bottom" type="email" placeholder="Email..." name="email" required>
+          <label class="adwa-text-teal"><b>Password</b></label>
+          <input class="adwa-pale-green adwa-input adwa-border adwa-margin-bottom" type="password" placeholder="Password..." name="password" required>
+          <label class="adwa-text-teal"><b>Confirm Password</b></label>
+          <input class="adwa-pale-green adwa-input adwa-border adwa-margin-bottom" type="password" placeholder="Confirm Password..." name="confirm_password" required>
+          <button class="adwa-button adwa-border adwa-border-teal adwa-hover-teal adwa-hover-shadow adwa-teal adwa-button adwa-block adwa-section adwa-padding"  type="submit">Register</button>
+        </div>
+      </form>
+      <div class="adwa-container adwa-border-top adwa-padding-16 adwa-light-green">
+        <span class="adwa-right adwa-padding adwa-hide-small">ALREADY HAVE AN ACCOUNT? <a href="login">LOGIN</a></span>
+      </div>
+</body>
+</html>

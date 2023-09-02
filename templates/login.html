@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/adwa.css' %}">
+    <title>LOGIN</title>
+</head>
+<body class="adwa-cursive">
+    <div class="adwa-center"><br>
+        <h2 class="adwa-center adwa-cursive">LOGIN</h2>
+        <img src="{% static 'img/avatar3.png' %}" alt="Avatar" style="width:30%" class="adwa-circle adwa-margin-top adwa-center">
+      </div>
+      <div class="adwa-panel adwa-bar adwa-leftbar adwa-pale-red adwa-margin adwa-border-red adwa-text-red">
+        {% for message in messages%}
+        <h3 class="adwa-center">{{message}}</h3>
+        {% endfor %}
+    </div>
+      <form method="post" class="adwa-container" action="login">
+        {% csrf_token %}
+        <div class="adwa-section">
+          <label class="adwa-text-teal"><b>Username</b></label>
+          <input class="adwa-pale-green adwa-input adwa-border adwa-margin-bottom" type="text" placeholder="Enter Username" name="username" required>
+          <label class="adwa-text-teal"><b>Password</b></label>
+          <input class="adwa-pale-green adwa-input adwa-border" type="password" placeholder="Enter Password" name="password1" required>
+          <button class="adwa-button adwa-border adwa-border-teal adwa-hover-teal adwa-hover-shadow adwa-teal adwa-button adwa-block adwa-section adwa-padding" type="submit">Login</button>
+        </div>
+      </form>
+      <div class="adwa-container adwa-border-top adwa-padding-16 adwa-light-green">
+        <span class="adwa-right adwa-padding adwa-hide-small">DON'T HAVE AN ACCOUNT?<a href="register">REGISTER</a></span>
+      </div>
+</body>
+</html>
