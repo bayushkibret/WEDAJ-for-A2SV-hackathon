@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,9 +42,53 @@
     </header>
 <br><br>
     {% if user.is_authenticated %}
-    <div class="adwa-container adwa-green">
-        <h2 class="adwa-center">Get An Advice</h2>
+    <div class="adwa-bar adwa-green">
+        
+      <h2 class="adwa-bar-item adwa-center">Get An Advice</h2>
+
+      <button onclick="document.getElementById('id01').style.display='block'" class="adwa-button adwa-border adwa-border-white adwa-margin-top adwa-margin-right adwa-bar-item adwa-hover-shadow adwa-right">
+        <i class="fa fa-history"></i> History</button>
+
+      <div id="id01" class="adwa-modal">
+        <div class="adwa-modal-content adwa-animate-right adwa-card-4">
+          <header class="adwa-container adwa-light-green"> 
+            <span onclick="document.getElementById('id01').style.display='none'" 
+            class="adwa-button adwa-display-topright adwa-hover-red">&times;</span>
+            <h2 class="adwa-center adwa-text-white">Requested Advice History</h2>
+          </header>
+          <div class="adwa-container adwa-pale-green">
+              <div class="adwa-responsive">
+                <br>
+                  <table class="adwa-table adwa-striped adwa-table-bordered">
+                      <thead>
+                        <tr class="adwa-pale-green">
+                          <th class="adwa-border-right adwa-green adwa-center">Postive Cash Flow</th>
+                          <th class="adwa-border-right adwa-green adwa-center">TotalReturn</th>
+                          <th class="adwa-border-right adwa-green adwa-center">Advice</th>
+                          <th class="adwa-border-right adwa-green adwa-center">Requested Time</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for history in histories %}
+                        <tr>
+                          <td class="adwa-border-right"><i class="fa fa-dollar"></i> {{history.postive_cash_flow}}</td>
+                          <td class="adwa-border-right"><i class="fa fa-dollar"></i> {{history.total_return}}</td>
+                          <td class="adwa-border-right"><i class="fa fa-chevron-circle-right"></i> {{history.advice}}</td>
+                          <td class="adwa-border-right"><i class="fa fa-calendar"></i> {{history.created_date}}</td>
+                        </tr>
+                        {% empty %}
+                        <tr class="adwa-bottombar adwa-border-green">
+                            <td colspan="4" class="adwa-center adwa-border-right"><i class="fa fa-dollar"></i>No Advice History!!!</td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+          </div>
+
+        </div>
       </div>
+    </div>
       
       <form action="advice" class="adwa-border adwa-border-teal adwa-container adwa-center" method="post">
         {% csrf_token %}
@@ -62,6 +106,9 @@
 <br>
 <br>
       </form>
+
+<br><br>
+
       <br><br>
 {% if searched %}
 <div class="adwa-responsive">
@@ -99,8 +146,24 @@
         {% else %}
         <h3 class="adwa-code adwa-border-teal adwa-teal adwa-center"><a class="adwa-text-lime" href="accounts/register"> Register</a> Or <a class="adwa-text-lime" href="accounts/login"> Login</a> And Take An Advice</h3>
         {% endif %}
-
-    </div>
     
+<!-- Footer -->
+<footer class="adwa-container adwa-padding-32 adwa-theme-d1 adwa-center">
+    <h4>Follow Us</h4>
+    <a class="adwa-button adwa-large adwa-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+    <a class="adwa-button adwa-large adwa-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
+    <a class="adwa-button adwa-large adwa-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
+    <a class="adwa-button adwa-large adwa-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
+    <a class="adwa-button adwa-large adwa-teal adwa-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+    <br>
+  
+    <div style="position:relative;bottom:100px;z-index:1;" class="adwa-tooltip adwa-right">
+      <span class="adwa-text adwa-padding adwa-teal adwa-hide-small">Go To Top</span>   
+      <a class="adwa-button adwa-theme" href="#"><span class="adwa-xlarge">
+      <i class="fa fa-chevron-circle-up"></i></span></a>
+    </div>
+  </footer>
+
+      </div>
 </body>
 </html>
