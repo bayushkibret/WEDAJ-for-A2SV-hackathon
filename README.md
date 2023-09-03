@@ -11,3 +11,23 @@ The frontend is developed using our native adwa.css, pure HTML, and JavaScript.
 The Backend is developed using the Python Django framework.
 
 We use simple algorithm that can decide by calculating the given values and giving the main advice that the helps the user.
+
+
+## Installation
+
+Before you can run this project, you need to have Python and Django installed on your system.
+
+### 1. Install Python
+
+If you don't have Python installed, follow these steps to get it:
+
+- Visit the official Python website: [python.org](https://www.python.org/downloads/)
+- Download the latest Python version for your operating system.
+- Run the installer and follow the installation instructions.
+
+### 2. Install Django
+
+Once you have Python installed, you can install Django using `pip`, Python's package manager. Open your terminal or command prompt and enter the following command:
+
+```bash
+pip install django
