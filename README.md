@@ -1,6 +1,6 @@
 # WEDAJ
 
-![Screenshot of main image](./assets/img/for readme/Screenshot main img.png)
+![Screenshot of main image]([./assets/img/for readme/Screenshot main img.png](https://www.linkpicture.com/q/Screenshot-main-img.png))
 
 WEDAJ is a website that provides financial advice and guidance.
 The name "wedaj" means "friend" or "helper" in Amharic, and that is exactly what we aim to be for you.
