@@ -40,7 +40,7 @@ If you have Python and Django installed, you can get started with this project b
 Use the following command to clone the project repository and navigate to the project directory:
 
 
-git clone https://github.com/your-username/your-project.git
+git clone https://github.com/bayushkibret/WEDAJ-for-A2SV-hackathon.git
 cd your-project
 
 
