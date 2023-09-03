@@ -12,7 +12,6 @@ The Backend is developed using the Python Django framework.
 
 We use simple algorithm that can decide by calculating the given values and giving the main advice that the helps the user.
 
-
 ## Installation
 
 Before you can run this project, you need to have Python and Django installed on your system.
@@ -31,3 +30,21 @@ Once you have Python installed, you can install Django using `pip`, Python's pac
 
 ```bash
 pip install django
+
+Now that you have Python and Django installed, you can start using this project. Clone the project repository and navigate to the project directory:
+
+
+
+```bash
+git clone https://github.com/your-username/your-project.git
+cd your-project
+
+Next, you can run the Django development server to start the project:
+
+
+```bash
+python manage.py runserver
+You can access the project in your web browser by visiting http://localhost:8000/.
+
+
+
