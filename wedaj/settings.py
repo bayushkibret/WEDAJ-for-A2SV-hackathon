@@ -28,7 +28,7 @@ DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = ['0.0.0.0:10000']
 
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('0.0.0.0')
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('https://wedaj-test.onrender.com/')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
