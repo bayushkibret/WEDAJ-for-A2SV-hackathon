@@ -124,7 +124,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 if not DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    STATIC_ROOT = 'assets'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
