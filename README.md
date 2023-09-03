@@ -30,7 +30,7 @@ Once you have Python installed, you can install Django using `pip`, Python's pac
 
 ```bash
 pip install django
-bash```
+
 ## Project Setup Instructions
 
 If you have Python and Django installed, you can get started with this project by following these steps:
