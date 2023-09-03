@@ -39,7 +39,7 @@ If you have Python and Django installed, you can get started with this project b
 
 Use the following command to clone the project repository and navigate to the project directory:
 
-```bash
+
 git clone https://github.com/your-username/your-project.git
 cd your-project
 
