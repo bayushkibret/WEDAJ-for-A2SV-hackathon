@@ -42,6 +42,8 @@ Use the following command to clone the project repository and navigate to the pr
 
 git clone https://github.com/bayushkibret/WEDAJ-for-A2SV-hackathon.git
 cd your-project
+python manage.py runserver
+
 
 
 
