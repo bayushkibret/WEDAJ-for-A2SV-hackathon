@@ -236,7 +236,3 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .adwa-border-dark-grey,.adwa-hover-border-dark-grey:hover,.adwa-border-dark-gray,.adwa-hover-border-dark-gray:hover{border-color:#616161!important}
 .adwa-border-pale-red,.adwa-hover-border-pale-red:hover{border-color:#ffe7e7!important}.adwa-border-pale-green,.adwa-hover-border-pale-green:hover{border-color:#e7ffe7!important}
 .adwa-border-pale-yellow,.adwa-hover-border-pale-yellow:hover{border-color:#ffffcc!important}.adwa-border-pale-blue,.adwa-hover-border-pale-blue:hover{border-color:#e7ffff!important}
-
-header{
-    background-image: url('../img/avatar3.png');
-}
