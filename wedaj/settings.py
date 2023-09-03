@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-k9g5eb_ikw0l7ohdyzvtr(qv8kdb(br7m+qh%*6s)5yiwp83%c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = FALSE
+DEBUG = False
 
 ALLOWED_HOSTS = ['https://wedaj-test.onrender.com']
 
