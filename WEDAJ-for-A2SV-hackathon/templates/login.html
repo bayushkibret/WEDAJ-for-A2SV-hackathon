@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/adwa.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <title>LOGIN</title>
-    <style></style>
 </head>
 <body class="adwa-cursive">
     <div class="adwa-center"><br>
@@ -22,12 +22,12 @@
         {% csrf_token %}
         <div class="adwa-section">
           <label class="adwa-text-teal"><b>Username</b></label>
-          <input class="adwa-pale-green adwa-input adwa-border adwa-margin-bottom" type="text" placeholder="Enter Username" name="username" required>
+          <input style="width: 95%;" class="adwa-pale-green adwa-input adwa-border adwa-margin-bottom" type="text" placeholder="Enter Username" name="username" required>
           <label class="adwa-text-teal"><b>Password</b></label>
-          <input class="adwa-pale-green adwa-input adwa-border adwa-margin-bottom" type="password" id="myInput" name="password1" required placeholder="Enter Password">
-          <span class="adwa-right">Show Password <input class="adwa-check" type="checkbox" onclick="myFunction()"></span> 
           <br>
-      <button class="adwa-button adwa-border adwa-border-teal adwa-hover-teal adwa-hover-shadow adwa-teal adwa-button adwa-block adwa-section adwa-padding" type="submit">Login</button>
+          <input class="adwa-pale-green adwa-border" style="width: 95%; padding: 0.5%;" type="password" name="password1" autocomplete="current-password" required placeholder="Enter Password" id="id_password">
+  <i class="fa fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
+  <button class="adwa-button adwa-border adwa-border-teal adwa-hover-teal adwa-hover-shadow adwa-teal adwa-button adwa-block adwa-section adwa-padding" type="submit">Login</button>
         </div>
       </form>
       <div class="adwa-container adwa-border-top adwa-padding-16 adwa-light-green">
@@ -35,16 +35,16 @@
       </div>
 
 <script>
+  const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#id_password');
 
-function myFunction() {
-  var x = document.getElementById("myInput");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-}
-
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
 </script>
 
 </body>
