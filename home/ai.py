@@ -18,5 +18,3 @@ def ai(postive_cash_flow, total_savings, total_return, user):
 
 	response = requests.post(url, json=payload, headers=headers)
 	return response.json()['text']
-
-print(ai(300, 400, 590, 'micky', ))
