@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'django.contrib.gis',
+    'django.contrib.geoip2',
 ]
 
 MIDDLEWARE = [

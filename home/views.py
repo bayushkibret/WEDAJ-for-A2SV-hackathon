@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .main import *
+from django.contrib.gis.geoip2 import GeoIP2
+from django.shortcuts import get_client_ip
 from .models import advice_history
 import datetime
 from .ai import ai
@@ -28,8 +30,10 @@ def give_me_advice(request):
         total_savings = result['total_savings']
         total_return = result['total_return']
         user = request.user
-        country = request.user.country
-        country = str(country)
+        ip_address = get_client_ip(request)
+        geoip = GeoIP2('GeoLite2-Country.mmdb')
+        country = geoip.country(ip_address)
+        country = geoip.country_name(country)
         created_date = datetime.datetime.now()
 
         advice = ai(postive_cash_flow=postive_cash_flow, total_return=total_return, total_savings=total_savings, user=user, country=country)
