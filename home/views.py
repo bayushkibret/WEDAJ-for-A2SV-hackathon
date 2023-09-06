@@ -32,7 +32,7 @@ def give_me_advice(request):
 
         advice = ai(postive_cash_flow=postive_cash_flow, total_return=total_return, total_savings=total_savings, user=user)
         
-        
+        advice = advice['text']
     
         commit = advice_history(user = user, 
                             postive_cash_flow = postive_cash_flow,
