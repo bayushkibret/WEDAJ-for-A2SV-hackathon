@@ -31,9 +31,7 @@ def give_me_advice(request):
         created_date = datetime.datetime.now()
 
         advice = ai(postive_cash_flow=postive_cash_flow, total_return=total_return, total_savings=total_savings, user=user)
-        
-        advice = advice['text']
-    
+        advice = str(advice)
         commit = advice_history(user = user, 
                             postive_cash_flow = postive_cash_flow,
                             total_savings = total_savings,
