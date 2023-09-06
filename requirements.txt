@@ -2,4 +2,3 @@ django
 gunicorn
 whitenoise
 requests
-django-geoip
