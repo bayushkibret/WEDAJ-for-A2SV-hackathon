@@ -29,6 +29,7 @@ def give_me_advice(request):
         total_return = result['total_return']
         user = request.user
         country = request.user.country
+        country = str(country)
         created_date = datetime.datetime.now()
 
         advice = ai(postive_cash_flow=postive_cash_flow, total_return=total_return, total_savings=total_savings, user=user, country=country)
