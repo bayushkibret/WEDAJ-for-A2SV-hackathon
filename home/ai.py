@@ -6,7 +6,7 @@ def ai(postive_cash_flow, total_savings, total_return, user):
 
 	payload = [
 		{
-			"content": "hello " + "my name is " + str(user) + "can you advice me by seeing these values?" + "my calculated posetive cash flow,total_saving and total return is " + str(postive_cash_flow) + str(total_savings) + str(total_return) + "respectively, advice me with " + country + "standards",
+			"content": "hello " + "my name is " + str(user) + "can you advice me by seeing these values?" + "my calculated posetive cash flow,total_saving and total return is " + str(postive_cash_flow) + str(total_savings) + str(total_return) + "respectively, advice me with african standards",
 			"role": "user"
 		}
 	]
