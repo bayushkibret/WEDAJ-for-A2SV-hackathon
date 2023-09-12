@@ -2,7 +2,6 @@ from django.shortcuts import render
 from .main import *
 from .models import advice_history
 import datetime
-from .ai import ai
 # Create your views here.
 def home(request):
     user = request.user

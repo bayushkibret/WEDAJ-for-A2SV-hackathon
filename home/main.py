@@ -1,20 +1,9 @@
-def calculate_financial_data(total_income, total_expenditures, simple_interest_earned):
-  """This function calculates the financial data given the total income, total expenditures, and simple interest earned.
+from Bard import Chatbot
 
-  Args:
-    total_income: The total income.
-    total_expenditures: The total expenditures.
-    simple_interest_earned: The simple interest earned.
+def ai(postive_cash_flow, total_savings, total_return, user):
+    Secure_1PSID = 'awjMJqkOLhWYDUe9H3kHXHjnYUn0WLhShqEG66KYRUzCNhMEZBHw37t7jd6wHV37ngciKQ.'
+    Secure_1PSIDTS = 'sidts-CjIBSAxbGab_INBvBg9pm0A2TpfZtGmLX2sjjQli_Wrnb0rk7fmG68hL3i7VJdlDTZOjshAA'
+    chatbot = Chatbot(Secure_1PSID, Secure_1PSIDTS)
 
-  Returns:
-    The positive cash flow, the total savings, and the total return.
-  """
-
-  postive_cash_flow = total_income - total_expenditures
-  total_savings = postive_cash_flow + simple_interest_earned
-  total_return = total_savings / total_income * 100
-
-  # Print the financial data.
-  result = {'postive_cash_flow':postive_cash_flow, 'total_savings':total_savings, 'total_return':total_return}
-  return result
-
+    advice = chatbot.ask("hello " + "my name is " + str(user) + "can you advice me by seeing these values?" + "my calculated posetive cash flow,total_saving and total return is " + str(postive_cash_flow) + str(total_savings) + str(total_return) + "respectively, advice me with african standards")
+    print(advice['content'])
